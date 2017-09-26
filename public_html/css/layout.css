@@ -536,9 +536,10 @@ ul#nav li.current a { color: #F06000; }
 	text-transform: uppercase;
    letter-spacing: 3px;
    cursor: pointer;
+   margin-right: 24px;
 }
 .popup-modal a:hover {	color: #00CCCC; }
-.popup-modal a.popup-modal-dismiss { margin-left: 24px; }
+/*.popup-modal a.popup-modal-dismiss { margin-left: 24px; }*/
 
 
 /* fadein/fadeout effect for modal popup
