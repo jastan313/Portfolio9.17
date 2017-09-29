@@ -615,7 +615,7 @@ ul#nav li.current a { color: #F06000; }
 	color: #11ABB0;
 	font-size: 13px;
 }
-#message-warning, #message-success {
+#message {
    display: none;
 	background: #0F0F0F;
 	padding: 24px 24px;
@@ -623,11 +623,10 @@ ul#nav li.current a { color: #F06000; }
    width: 65%;
    margin-left: 26%;
 }
-#message-warning { color: #D72828; }
-#message-success { color: #11ABB0; }
 
-#message-warning i,
-#message-success i {
+#message { color: #11ABB0; }
+
+#message i {
    margin-right: 10px;
 }
 #image-loader {

@@ -6,8 +6,8 @@
         <meta charset="utf-8">
         <title>Jason Tan's Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="stylesheet" href="css/default.css">
-        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/default.min.css">
+        <link rel="stylesheet" href="css/layout.min.css">
         <link rel="stylesheet" href="css/media-queries.min.css">
         <link rel="stylesheet" href="css/magnific-popup.min.css">
         <script src="js/modernizr.js"></script>
@@ -290,7 +290,7 @@
             </div>
             <div class="row">
                 <div class="eight columns">
-                    <form action="" method="post" id="contactForm" name="contactForm">
+                    <form action="" method="POST" id="contactForm" name="contactForm">
                         <fieldset>
                             <div>
                                 <label for="contactName">Name <span class="required">*</span></label>
@@ -306,7 +306,7 @@
                             </div>
                             <div>
                                 <label for="contactMessage">Message <span class="required">*</span></label>
-                                <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                                <textarea cols="50" rows="15" id="contactMessage" name="contactMessage" required></textarea>
                             </div>
                             <div>
                                 <button class="submit">Submit</button>
@@ -316,10 +316,8 @@
                             </div>
                         </fieldset>
                     </form>
-
-                    <div id="message-warning">Oops, something went wrong!</div>
-                    <div id="message-success">
-                        <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+                    <div id="message">
+                        <i class="fa" id="message-text"></i><br>
                     </div>
                 </div>
             </div>

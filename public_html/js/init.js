@@ -110,6 +110,50 @@ jQuery(document).ready(function ($) {
         animationSpeed: 600,
         randomize: false,
     });
+    
+    /* Validation Functions */
+    function validateName(name) {
+        $('#message').hide();
+        if (name.length === 0) {
+            return 'Name is required.';
+        }
+        if (!name.match(/^[A-Za-z]*\s[A-Za-z]+$/)) {
+            return 'Name: Please enter your first and last name.';
+        }
+        return '';
+    }
+
+    function validateEmail(email) {
+        $('#message').hide();
+        if (email.length === 0) {
+            return 'Email is required.';
+        }
+        if (!email.match(/^[A-Za-z\._\-0-9]+[@][A-Za-z]+[\.][a-z]{2,4}$/)) {
+            return 'Email: Please enter a valid email.';
+        }
+        return '';
+    }
+
+
+    function validateSubject(subject) {
+        $('#message').hide();
+        var required = 10;
+        var left = required - subject.length;
+        if (left > 0) {
+            return 'Subject: ' + left + ' more characters required.';
+        }
+        return '';
+    }
+
+    function validateMessage(message) {
+        $('#message').hide();
+        var required = 30;
+        var left = required - message.length;
+        if (left > 0) {
+            return 'Message: ' + left + ' more characters required.';
+        }
+        return '';
+    }
 
     /*----------------------------------------------------*/
     /*	contact form
@@ -120,29 +164,40 @@ jQuery(document).ready(function ($) {
         var contactEmail = $('#contactForm #contactEmail').val();
         var contactSubject = $('#contactForm #contactSubject').val();
         var contactMessage = $('#contactForm #contactMessage').val();
-        var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-                '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
-        $.ajax({
 
-            type: "POST",
-            url: "inc/sendEmail.php",
-            data: data,
-            success: function (msg) {
-                // Message was sent
-                if (msg == 'OK') {
-                    $('#image-loader').fadeOut();
-                    $('#message-warning').hide();
-                    $('#contactForm').fadeOut();
-                    $('#message-success').fadeIn();
-                }
-                // There was an error
-                else {
-                    $('#image-loader').fadeOut();
-                    $('#message-warning').html(msg);
-                    $('#message-warning').fadeIn();
+        var result = validateName(contactName);
+        if (result.length === 0) {
+            result = validateEmail(contactEmail);
+            if (result.length === 0) {
+                result = validateSubject(contactSubject);
+                if (result.length === 0) {
+                    result = validateMessage(contactMessage);
                 }
             }
-        });
+        }
+
+        if (result.length === 0) {
+            var data = 'Contact Name: ' + contactName + '\nEmail: ' + contactEmail +
+             '\nSubject: ' + contactSubject + '\nBody: ' + contactMessage;
+             $.ajax({
+             type: "POST",
+             url: "https://formspree.io/jastan313@gmail.com",
+             data: {message: data},
+             dataType: "json"
+             });
+            $('#contactForm').fadeOut();
+            $('#message-text').addClass('fa-check');
+            $('#message-text').removeClass('fa-times');
+            $('#message-text').html(' Your message was sent, thank you!');
+            $('#message').css('color', '#11ABB0');
+        } else {
+            $('#message-text').removeClass('fa-check');
+            $('#message-text').addClass('fa-times');
+            $('#message-text').html(' ' + result);
+            $('#message').css('color', '#B02D11');
+        }
+        $('#image-loader').fadeOut();
+        $('#message').fadeIn();
         return false;
     });
 });
