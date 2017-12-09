@@ -50,7 +50,7 @@ header .banner {
    vertical-align: middle;
    margin: 0 auto;
    width: 85%;
-   padding-bottom: 30px;s
+   padding-bottom: 30px;
    text-align: center;
 }
 
@@ -170,7 +170,6 @@ ul#nav li.current a { color: #F06000; }
 
 #about {
     background: url(../images/contact_bg.jpg) repeat;
-   //background: #2B2B2B;
    padding-top: 96px;
    padding-bottom: 66px;
    overflow: hidden;
@@ -308,7 +307,7 @@ ul#nav li.current a { color: #F06000; }
 }
 
 .java {
-  	width: 85%;
+  	width: 80%;
   	-moz-animation: java 2s ease;
   	-webkit-animation: java 2s ease;
 }
@@ -318,24 +317,19 @@ ul#nav li.current a { color: #F06000; }
   	-webkit-animation: sql 2s ease;
 }
 .javascript {
-  	width: 80%;
+  	width: 90%;
   	-moz-animation: javascript 2s ease;
   	-webkit-animation: javascript 2s ease;
 }
-.css {
-  	width: 65%;
+.html5-css {
+  	width: 70%;
   	-moz-animation: css 2s ease;
   	-webkit-animation: css 2s ease;
-}
-.html5 {
-  	width: 70%;
-  	-moz-animation: html5 2s ease;
-  	-webkit-animation: html5 2s ease;
 }
 
 @-moz-keyframes java {
   0%   { width: 0px;  }
-  100% { width: 85%;  }
+  100% { width: 80%;  }
 }
 @-moz-keyframes sql {
   0%   { width: 0px;  }
@@ -343,20 +337,16 @@ ul#nav li.current a { color: #F06000; }
 }
 @-moz-keyframes javascript {
   0%   { width: 0px;  }
-  100% { width: 80%;  }
+  100% { width: 90%;  }
 }
-@-moz-keyframes css {
-  0%   { width: 0px;  }
-  100% { width: 65%;  }
-}
-@-moz-keyframes html5 {
+@-moz-keyframes html5-css {
   0%   { width: 0px;  }
   100% { width: 70%;  }
 }
 
 @-webkit-keyframes java {
   0%   { width: 0px;  }
-  100% { width: 85%;  }
+  100% { width: 80%;  }
 }
 @-webkit-keyframes sql {
   0%   { width: 0px;  }
@@ -364,13 +354,9 @@ ul#nav li.current a { color: #F06000; }
 }
 @-webkit-keyframes javascript {
   0%   { width: 0px;  }
-  100% { width: 80%;  }
+  100% { width: 90%;  }
 }
-@-webkit-keyframes css {
-  0%   { width: 0px;  }
-  100% { width: 65%;  }
-}
-@-webkit-keyframes html5 {
+@-webkit-keyframes html5-css {
   0%   { width: 0px;  }
   100% { width: 70%;  }
 }
@@ -525,7 +511,6 @@ ul#nav li.current a { color: #F06000; }
 
 #contact {
    background: url(../images/contact_bg.jpg) repeat;
-    //background: #191919;
    padding-top: 96px;
    padding-bottom: 102px;
    color: #969696;

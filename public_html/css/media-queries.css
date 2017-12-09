@@ -210,7 +210,7 @@
    /* Portfolio Section
    /* ----------------------------------------------------------------- */
    #portfolio-wrapper .columns { margin-bottom: 40px; }
-   .popup-modal {	max-width: 400px; } //here
+   .popup-modal {	max-width: 400px; }
 
    /* Control Nav */
    .flex-control-nav {
